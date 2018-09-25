@@ -22,34 +22,17 @@ public class ProblemSet2 {
 	
 	public void gradeMe() {
 		
-		double[][] gradesrades = new double[3][3];
+		double[][] grades = new double[3][3];
+		String[] types = {"homework", "quiz", "test"};
 		
+		for (int i = 0; i < 3; i++) {
+			System.out.println("What are your " + types[i] + " grades?");
+			for (int j = 0; j < 3; j++)
+				grades[i][j] = in.nextDouble();
+		}
 		int i = 0;
+		System.out.println("Your average is " + ( (0.15 * grades[0][i++] + grades[0][i++] + grades[0][i++]) + ( 0.3 ) + "%");
 		
-		System.out.println("What are your homework scores?");
-		
-		while (i < 3) {
-			grades[0][i] = in.nextDouble();
-			i++;
-		}
-		
-		System.out.println("What are your quiz scores?");
-		
-		i = 0;
-		
-		while (i < 3) {
-			hwGrades[i] = in.nextDouble();
-			i++;
-		}
-		
-		System.out.println("What are your test scores?");
-		
-		i = 0;
-		
-		while (i < 3) {
-			hwGrades[i] = in.nextDouble();
-			i++;
-		}
 	}
 	
 	public void groupUs() {
