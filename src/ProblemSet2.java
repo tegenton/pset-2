@@ -49,7 +49,13 @@ public class ProblemSet2 {
 	}
 	
 	public void info() {
+		String[] info = new String[5];
+		String[] questions = {"first name", "last name", "grade", "age", "hometown"};
 		
+		for (int i = 0; i < 5; i++) {
+			System.out.println("What is your " + questions[i] + "?");
+			info[i] = in.nextLine();
+		}
 	}
 	
 	public void initials() {
