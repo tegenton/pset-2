@@ -31,12 +31,21 @@ public class ProblemSet2 {
 				grades[i][j] = in.nextDouble();
 		}
 		int i = 0;
-		System.out.println("Your average is " + ( (0.15 * grades[0][i++] + grades[0][i++] + grades[0][i++]) + ( 0.3 ) + "%");
+		System.out.println("Your average is " + ( (0.15 * (grades[0][i++] + grades[0][i++] + grades[0][i++])) + ( 0.3 * ( grades[1][i=0] + grades[1][++i] + grades[1][++i]))  + (0.55 * ( grades[2][i=0] + grades[2][++i] + grades[2][++i] ) ) ) / 3 + "%");
 		
 	}
 	
 	public void groupUs() {
 		
+		System.out.println("How many students will be coming?");
+		int totalPeople = in.nextInt();
+		System.out.println("How many teachers will be coming?");
+		totalPeople += in.nextInt();
+		if ( totalPeople % 47 == 0 ) System.out.println("You will need " + totalPeople / 47 + " busses of 48 people (including the driver)");
+		else {
+			int busses = (totalPeople / 47) + 1;
+			System.out.println("You will need " + (busses - 1) + " full bus"  + ( busses - 1 != 1 ? "ses" : "") + " and one bus of " + totalPeople % 47  + " people");
+		}
 	}
 	
 	public void info() {
