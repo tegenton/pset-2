@@ -27,11 +27,12 @@ public class ProblemSet2 {
 		
 		for (int i = 0; i < 3; i++) {
 			System.out.println("What are your " + types[i] + " grades?");
-			for (int j = 0; j < 3; j++)
+			for (int j = 0; j < 3; j++) {
 				grades[i][j] = in.nextDouble();
+			}
 		}
 		int i = 0;
-		System.out.println("Your average is " + ( (0.15 * (grades[0][i++] + grades[0][i++] + grades[0][i++])) + ( 0.3 * ( grades[1][i=0] + grades[1][++i] + grades[1][++i]))  + (0.55 * ( grades[2][i=0] + grades[2][++i] + grades[2][++i] ) ) ) / 3 + "%");
+		System.out.println("Your average is " + ( 0.15 * (grades[0][i++] + grades[0][i++] + grades[0][i]) + ( 0.3 * ( grades[1][i=0] + grades[1][++i] + grades[1][++i]))  + (0.55 * ( grades[2][i=0] + grades[2][++i] + grades[2][++i] ) ) ) / 3 + "%");
 		
 	}
 	
@@ -51,7 +52,7 @@ public class ProblemSet2 {
 	public void info() {
 		String[] info = new String[5];
 		String[] questions = {"first name", "last name", "grade", "age", "hometown"};
-		
+
 		for (int i = 0; i < 5; i++) {
 			System.out.println("What is your " + questions[i] + "?");
 			info[i] = in.nextLine();
