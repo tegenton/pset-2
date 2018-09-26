@@ -45,21 +45,31 @@ public class ProblemSet2 {
 		if ( totalPeople % 47 == 0 ) System.out.println("You will need " + totalPeople / 47 + " busses of 48 people (including the driver)");
 		else {
 			int busses = (totalPeople / 47) + 1;
-			System.out.println("You will need " + (busses - 1) + " full bus"  + ( busses - 1 != 1 ? "ses" : "") + " and one bus of " + totalPeople % 47  + " people");
+			System.out.println("You will need " + (busses - 1) + " full bus"  + ( busses - 1 != 1 ? "ses" : "") + " and one bus of " + ((totalPeople % 47) + 1)  + " people (with the bus driver)");
 		}
+		in.nextLine();
 	}
 	
 	public void info() {
 		String[] info = new String[5];
-		String[] questions = {"first name", "last name", "grade", "age", "hometown"};
+		String[][] questions = {{"first name", "last name", "grade", "age", "hometown"}, {"NAME     : ", "GRADE    : ", "AGE      : ", "HOMETOWN : "}};
 
 		for (int i = 0; i < 5; i++) {
-			System.out.println("What is your " + questions[i] + "?");
+			System.out.println("What is your " + questions[0][i] + "?");
 			info[i] = in.nextLine();
+		}
+		for (int i = 0; i < 4; i++) {
+			System.out.println(questions[1][i] + ((i == 0) ? info[0] + " " : "") + info[i + 1]);
 		}
 	}
 	
 	public void initials() {
-		
+		String[] names = {"first", "middle", "last"};
+		char[] initials = new char[3];
+	 	for (int i = 0; i < 3; i++) {
+		 	System.out.print("\nPlease enter your " + names[i] + "name: ");
+		 	initials[i] = in.next().charAt(0);
+	 	}
+	 	System.out.println("Your initials are " + new String(initials).toUpperCase());
 	}
 }
